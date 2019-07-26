@@ -1,0 +1,25 @@
+Lista de Exercicios Basicos sobre Vetores e Strings
+
+1) Crie um programa em C que receba um vetor de numeros inteiros e
+retorne a media geometrica (real) de seus elementos
+(http://pt.wikipedia.org/wiki/M%C3%A9dia_geom%C3%A9trica).
+
+2) Crie um programa em C que receba um vetor de numeros inteiros e
+retorne a media harmonica (real) de seus elementos (Pesquise na
+Wikipedia como calcular esta media).
+
+3) Crie um programa em C que receba um vetor de números inteiros e
+um valor inteiro que será procurado no vetor. Este programa imprimirá
+o primeiro índice em que encontrar o referido elemento, ou -1, caso
+não exista.
+
+4) Crie um programa em C que receba um vetor de números inteiros
+e que mostre na tela os valores pares que estão em índices ímpares.
+
+5) Crie um programa em C que faca o mesmo que a funcao strlen, ou seja,
+conte quantos caracteres ha numa String (dica: basta contar ate chegar
+o caractere terminador -> '\0').
+
+6) Crie um programa em C que receba duas Strings e diga se elas sao 
+identicas ou nao (ja existe uma funcao que faz isso, mas crie o seu
+algoritmo!!).

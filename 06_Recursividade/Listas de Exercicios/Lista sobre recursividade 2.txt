@@ -1,0 +1,43 @@
+1) Calcule recursivamente a soma de todos os inteiros positivos ate n.
+
+2) Calcule recursivamente o valor da expressao: 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + ...+ 1/n
+
+3) Ache recursivamente a soma dos elementos de um vetor ate o indice n.
+
+4) Ache recursivamente a soma dos numeros impares positivos ate n.
+
+5) Implemente um procedimento que resolva recursivamente a Torre de Hanoi.
+
+6) Ache recursivamente o valor da expressao: 1/1 - 1/2 + 1/3 - 1/4 + 1/5 - 1/6 + ...+- 1/n
+
+7) O PI (3.14159) pode ser aproximado atraves de algumas expressoes; quanto maior o valor de n, melhor eh a aproximacao. Implemente recursivamente as expressoes abaixo:
+
+a) PI = 2.( 2/1 . 2/3 . 4/3 . 4/5 . 6/5 . 6/7 . 8/7 . 8/9 . n/(n-1) . n/(n+1) ), para n par
+
+b) PI = 4.( 1/1 - 1/3 + 1/5 - 1/7 + 1/9 - .... +- 1/n ), para n impar
+
+
+8) Crie uma funcao recursiva que procure um elemento num vetor, a partir de um dado indice. Caso ache, a funcao retorna o indice do tal elemento; em caso de falha, retorna -1.
+A assinatura da funcao e:
+
+int procurar (int vet[], int procurado, int inicio, int tam)
+
+9) Crie uma funcao recursiva que, dados dois numeros inteiros x e n, calcule o valor de x^n. Qual eh a base, ou seja, o caso mais simples? Para o caso geral, lembre-se que, por exemplo, 2^10 = 2 * 2^9 ....
+
+10) Crie um procedimento recursivo que, dado um numero decimal, imprima a representacao binaria correspondente. Por exemplo: 
+12 em decimal corresponde a 1100 em binario, porque 12/2 = 6, resto 0 (ultimo digito 0); 6/2 = 3, resto 0 (penultimo digito 0); 3/2 = 1, resto 1 (ante-penultimo digito 1); 1/2 = 0, resto 1 (primeiro digito 1). Resultado: 1100.
+
+11) Crie um procedimento recursivo que, dado um numero binario, imprima a representacao decimal correspondente. Por exemplo: 
+1100 em binario corresponde a 12 em decimal, porque 0*1 + 0*2 + 1*4 + 1*8 = 12.
+Qual eh a base? E o caso geral?
+
+12) Crie uma funcao recursiva para calcular o maximo divisor comum (MDC) entre dois numeros inteiros, usando o algoritmo de Euclides.
+
+
+
+
+
+
+
+
+

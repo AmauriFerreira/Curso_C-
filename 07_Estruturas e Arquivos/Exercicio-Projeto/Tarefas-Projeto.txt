@@ -1,0 +1,15 @@
+Mini-projeto:
+
+1) Crie uma função procurar, com a assinatura abaixo, de modo que ela possa ser aproveitada tanto na funcionalidade procurar, quanto na excluir:
+
+int procurar(char procurado[], struct ficha vetor[], int num_fichas)
+
+O retorno dessa função será o índice do elemento encontrado, ou -1, caso o mesmo não tenta sido localizado.
+
+2) Reimplemente a função procurar de modo recursivo (particularmente não há nenhuma vantagem nesta alteração, é só para treinarmos).
+
+3) Refaça a funcionalidade de exclusão de modo a não ter que copiar todos os elementos abaixo do excluído.
+
+4) Refaça o procurar de modo a trabalhar mesmo com pedaços de nomes.
+
+5) Inclua novos campos, como endereço, e-mail, idade, etc.

@@ -1,0 +1,42 @@
+Lista de Exercícios Básicos sobre Funções e Procedimentos
+
+
+(FÁCIL)
+1) Crie uma função em C que receba 2 números inteiros e retorne o
+produto deles, sendo que este é calculado por somas sucessivas.
+Exemplo: 3 X 4 seria calculado assim: 4 + 4 + 4 = 12, ou seja, somo
+3 vezes o 4.
+
+(FÁCIL)
+2) Crie uma função em C que receba um vetor de números inteiros e
+retorne a soma de seus elementos.
+
+(FÁCIL)
+3) Crie uma função em C que receba um vetor de números inteiros e
+retorne a média aritmética (real) de seus elementos.
+
+(MÉDIO)
+4) Crie um procedimento em C que receba um número inteiro e imprima
+se o mesmo é ou não primo
+(http://pt.wikipedia.org/wiki/N%C3%BAmero_primo).
+
+(FÁCIL)
+5) Crie uma função em C que receba um vetor de números inteiros e
+retorne o maior elemento deste.
+
+(FÁCIL)
+6) Crie uma função em C que receba um vetor de números inteiros e
+um valor inteiro que será procurado no vetor. Este método retornará
+o primeiro índice em que encontrar o referido elemento, ou -1, caso
+não exista.
+
+(MÉDIO)
+7) "Uma das questões pesquisadas sobre os números primos é de como
+eles se distribuem nos naturais, com que frequência isso ocorre e qual
+a distância que existe entre eles. Por exemplo, existem vários pares
+de números primos que se diferem em duas unidades:
+(3, 5), (5, 7), (11, 13), (17, 19), (41, 43), (59, 61), (71, 73),
+(101, 103), (107, 109). Pares de números primos com essa propriedades
+são denominados de primos gêmeos."
+(http://pt.wikipedia.org/wiki/N%C3%BAmero_primo)
+Faça um programa que mostre todos os primos gêmeos até 1000.

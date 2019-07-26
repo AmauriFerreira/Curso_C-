@@ -1,0 +1,49 @@
+String ??
+---------
+É um texto ou vetor de caracteres
+
+"O gato miou"
+ _________________________
+|O| |g|a|t|o| |m|i|o|u |\0|
+ 0 1 2 3 4 5 6 7 8 9 10 11
+                         ^----------Caracter terminador
+Em C:
+char texto[30];  //aqui consigo guardar uma String de até 29
+		 // letras porque o caracter terminador '\0'
+		 // também conta
+
+Leitura:
+	scanf("%s", texto);
+	gets(texto);
+	fgets.....
+
+Impressão:
+	printf("%s", texto);
+
+Funções úteis:
+
+#include<string.h>
+
+strlen (mede o comprimento de uma string):
+------------------------------------------
+printf("%d", strlen(texto) ); //retorna o comprimento de um
+			      //texto: "O gato miou" -> 11
+
+strcmp (compara duas strings e retorna 0 caso haja coincidência):
+-----------------------------------------------------------------
+
+if( strcmp(texto, "O cachorro latiu") == 0 )
+	printf("Mesmo texto\n");
+else	printf("Texto diferente\n");
+
+
+
+
+
+
+
+
+
+
+
+

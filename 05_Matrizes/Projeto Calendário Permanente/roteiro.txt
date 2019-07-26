@@ -1,0 +1,14 @@
+1) Decido qual das tabelas As eu consulto através do ano:
+	--até 2000 -> A1
+	--a partir de 2001 -> A2
+
+2) Procuro na tabela A1 ou A2 os dois últimos dígitos do ano: 1997 -> 97  (ANO % 100)
+   Explicação:
+
+	1997 |__100___
+	  97     19
+
+   ...para descobrir a linha da tabela
+
+3) Consulta a tabela B na linha encontrada acima e na coluna correspondente ao mês (lembrando que o primeiro mês é janeiro (mês 1) mas a primeira coluna é a de índice 0), ou seja, no código precisaremos subtrair 1 ao valor do mês.
+O valor que eu achei na tabela B eu somarei ao valor do dia e procurarei esta soma na tabela C. A coluna em que o número for achado corresponderá ao dia da semana.

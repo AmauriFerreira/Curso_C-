@@ -1,0 +1,189 @@
+Tres perguntas chave para criar algoritmo recursivo:
+----------------------------------------------------
+
+1) Qual eh a instancia mais simples possivel do problema original?
+ ---> Uso isso para criar a base da recursao
+
+2) Qual eh a instancia um pouquinho mais simples que a do problema original?
+
+3) Se voce tivesse a resposta da pergunta 2 (a instancia um pouquinho mais simples que a do problema original), como eh que resolveria o problema original?
+ ---> Uso isso para criar o caso geral da recursao
+
+Exercicios:
+----------
+
+
+1) Calcule recursivamente a soma de todos os inteiros positivos ate n. Exemplo:
+0 + 1 + 2 + 3 + 4 + 5 + ..... + (n-1) + n
+
+int exerc1(int n)
+{
+   if(n==0) return 0;
+   else return exerc1(n-1) + n;
+
+}
+
+
+2) Calcule recursivamente o valor da expressao: 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + ...+ 1/n
+
+float exerc2(int n)
+{
+   if(n==1) return 1.0;
+   else return exerc2(n-1) + 1.0/n;
+}
+
+
+3) Ache recursivamente a soma dos elementos de um vetor ate o indice n: vet[0] + vet[1] + vet[2] + ... + vet[n]
+
+int exerc3(int vet[], int n)
+{
+   if(n==0) return vet[0];
+   else return exerc3(vet, n-1) + vet[n];
+}
+
+
+4) Ache recursivamente a soma dos números impares positivos ate n:
+1 + 3 + 5 + 7 + ... + (n-2) + n, se n eh impar
+1 + 3 + 5 + 7 + ... + n-1, se n eh par
+
+int exerc4(int n)
+{
+   if(n<=0) return 0; //instancia mais simples: n==0
+   else if(n%2==1) return exerc4(n-2) + n; //n impar
+   else return exerc4(n-1); //n par
+}
+
+       n  |     exerc4(n)
+-----------------------------------
+ else  10 | = exerc4(9) = 
+elseif  9 | = exerc4(7) + 9 = 
+elseif  7 | = exerc4(5) + 7 = 
+elseif  5 | = exerc4(3) + 5 = 
+elseif  3 | = exerc4(1) + 3 = 
+elseif  1 | = exerc4(-1) + 1 = 
+ if    -1 | = 0
+elseif  1 | = exerc4(-1) + 1 = 0 + 1 = 1
+elseif  3 | = exerc4(1) + 3 = 1 + 3 = 4
+elseif  5 | = exerc4(3) + 5 = 4 + 5 = 9
+elseif  7 | = exerc4(5) + 7 = 9 + 7 = 16
+elseif  9 | = exerc4(7) + 9 = 16 + 9 = 25
+ else  10 | = exerc4(9) = 25
+
+
+5) Implemente um procedimento que resolva recursivamente a Torre de Hanói.
+
+#include <stdio.h>
+void hanoi(int n, char origem, char destino, char aux)
+{ 
+   if(n==1)
+      printf("Mova o disco do pino %c para o pino %c\n", origem,destino);
+   else{ 
+      hanoi(n-1, origem, aux, destino); 
+      printf("Mova o disco do pino %c para o pino %c\n", origem,destino);
+      hanoi(n-1, aux, destino, origem); 
+   } 
+}              
+int main ( )
+{ 
+   printf("Resolvendo a Torre de Hanoi para 3 discos\n"); 
+   hanoi(3, 'A', 'C', 'B'); 
+   printf("Resolvendo a Torre de Hanoi para 4 discos\n"); 
+   hanoi(4, 'A', 'C', 'B');
+   return 0;
+}
+
+
+6) Ache recursivamente o valor da expressao: 1/1 - 1/2 + 1/3 - 1/4 + 1/5 - 1/6 + ...+- 1/n
+
+   1) Qual eh a instancia mais simples possivel do problema original?
+      ---> para n==1, a resposta eh 1.0
+   2) Qual eh a instancia um pouquinho mais simples que a do problema original?
+      ---> um pouco mais simples do que calcular a expressao ate n eh calcular ate (n-1)
+   3) Se voce tivesse a resposta da pergunta 2 (a instancia um pouquinho mais simples que a do problema original), como eh que resolveria o problema original?
+      ---> expressao(n)=expressao(n-1) - 1/n, se n eh par
+           expressao(n)=expressao(n-1) + 1/n, se n eh impar
+
+float expressao(int n)
+{
+   if(n==1) return 1.0;
+   else if(n%2==0) return expressao(n-1) - 1.0/n; //par
+        else expressao(n-1) + 1.0/n; //impar
+}
+
+7) O PI (3.14159) pode ser aproximado atraves de algumas expressões; quanto maior o valor de n, melhor eh a aproximacao. Implemente recursivamente as expressões abaixo:
+
+a) PI = 2.( 2/1 . 2/3 . 4/3 . 4/5 . 6/5 . 6/7 . 8/7 . 8/9 . n/(n-1) . n/(n+1) ), para n par
+
+   1) Qual eh a instancia mais simples possivel do problema original?
+      ---> para n==2, a resposta eh 8.0/3
+   2) Qual eh a instancia um pouquinho mais simples que a do problema original?
+      ---> um pouco mais simples do que calcular a expressao ate n eh calcular ate (n-2), ou seja, o número par anterior
+   3) Se voce tivesse a resposta da pergunta 2 (a instancia um pouquinho mais simples que a do problema original), como eh que resolveria o problema original?
+      ---> expressao(n)=expressao(n-2) * n/(n-1) * n/(n+1)
+	  
+	  
+   float PI(int n)
+   {
+      if(n%2==1) return PI(n-1); //se n for impar, calcule para o par anterior
+      if(n==2) return 8.0/3;
+      else return (float)(n*n)/((n-1)*(n+1)) * PI(n-2);
+   }
+
+b) PI = 4.( 1/1 - 1/3 + 1/5 - 1/7 + 1/9 - .... +- 1/n ), para n impar
+
+
+8) Crie uma funcao recursiva que procure um elemento num vetor, a partir de um dado indice. Caso ache, a funcao retorna o indice do tal elemento; em caso de falha, retorna -1.
+A assinatura da funcao eh:
+
+int procurar (int vet[], int procurado, int inicio, int tam)
+
+   Perguntas:
+   1) Versao mais simples de todas: procurar num lugar que eu sei que nao vou achar, ou seja, quando inicio >= tam eu tenho certeza que o elemento nao existira (eh como se o vetor tivesse tamanho zero). Retorno -1.
+   2) Versao um pouquinho mais simples: procurar a partir de inicio+1, que seria como se o vetor tivesse um elemento a menos.
+   3) Para encontrar a resposta da procura original, basta olhar no indice inicio: se encontrar, ok, caso contrario, voce ja tera a resposta da procura a partir de inicio+1, que eh resposta da chamada recursiva.
+
+   int procurar (int vet[], int procurado, int inicio, int tam)
+   {
+      if(inicio >= tam) return -1; //nao existe
+      else if(vet[inicio] == procurado) return inicio;
+      else return procurar (vet, procurado, inicio+1, tam);
+   }
+
+
+9) Crie uma funcao recursiva que, dados dois números inteiros x e n, calcule o valor de x^n (potenciacao). Qual eh a base, ou seja, o caso mais simples? Para o caso geral, lembre-se que, por exemplo, 2^10 = 2 * 2^9 ....
+
+   Perguntas:
+   1) Versao mais simples de todas: x^0 = 1
+   2) Versao um pouquinho mais simples: x^(n-1)
+   3) Para encontrar a resposta da procura original, basta fazer:
+
+          x^n = x * x^(n-1)
+
+   int potenciacao(int base, int expoente)
+   {
+      if(expoente == 0) return 1;
+      else return base * potenciacao(base, expoente-1);
+   }
+
+
+10) Crie um procedimento recursivo que, dado um número decimal, imprima a representacao binaria correspondente. Por exemplo: 
+12 em decimal corresponde a 1100 em binario, porque 12/2 = 6, resto 0 (último digito 0); 6/2 = 3, resto 0 (penúltimo digito 0); 3/2 = 1, resto 1 (ante-penúltimo digito 1); 1/2 = 0, resto 1 (primeiro digito 1). Resultado: 1100.
+
+11) Crie um procedimento recursivo que, dado um número binario, imprima a representacao decimal correspondente. Por exemplo: 
+1100 em binario corresponde a 12 em decimal, porque 0*1 + 0*2 + 1*4 + 1*8 = 12.
+Qual eh a base? E o caso geral?
+
+12) Crie uma funcao recursiva para calcular o maximo divisor comum (MDC) entre dois números inteiros, usando o algoritmo de Euclides.
+
+   Algoritmo de Euclides:
+
+   Base: se a for divisivel por b, mdc(a,b) = b
+   Caso Geral: mdc (a, b) = mdc (b, a%b)
+
+
+   int mdc(int a, int b)
+   {
+      if(a%b==0) return b;
+      else return mdc(b, a%b);
+   }
+

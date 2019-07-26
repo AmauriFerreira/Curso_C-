@@ -1,0 +1,58 @@
+1) a) Qual o valor de y no final do programa?
+   b) Escreva um /* coment·rio */ em cada comando de atribuiÁ„o explicando o que ele faz e o valor da vari·vel ‡† esquerda do '=' apÛs sua execuÁ„o.
+   c) Explique o porquÍ de a atribuÁ„o  *q = 10  causar problemas.
+
+int main()
+{
+	int x, y, *p, *q;
+	y = 19;
+	p = &y;
+	x = *p;
+	x = 7;
+	(*p)++;
+	x--;
+	(*p) = (*p) + x;
+	printf ("y = %d\n", y);
+	*q = 10;
+	return 0;
+}
+
+
+2) Comente o trecho abaixo linha-a-linha e mostre o que ser· impresso pelo comando printf:
+
+	int a = 10, b = 7, c;
+	int * p = &a;
+	int * q = &b;
+	int * r = &c;
+	*r = *p;
+	*p = *q;
+	*q = *r;
+	printf("%d  - %d"ù, a, b);
+
+
+3) Comente o trecho abaixo linha-a-linha e mostre o que ser· impresso pelo comando printf:
+
+	int vet[ ] = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
+	int * p = &(vet[2]);
+	int i;
+	for ( i = 1; i <= 6; i++ )
+	{	printf ("%d -  ", * p);
+		p++;
+	}
+
+
+Resposta:
+6 - 8 - 10 - 12 - 14 - 16 - 
+
+
+
+
+
+
+
+
+
+
+
+
+
